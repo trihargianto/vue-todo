@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="footer__item-left">3 items left</div>
+    <div class="footer__item-left">{{itemsLeftText}}</div>
     <div class="footer__tags">
       <button
         v-for="(item, index) in filterList"
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
@@ -27,6 +29,18 @@ export default {
     selectFilter(filterItem) {
       this.selectedFilter = filterItem;
     }
+  },
+  computed: {
+    itemsLeftText() {
+      const plural = this.activeItemsLeftCount > 1;
+
+      return (
+        this.activeItemsLeftCount + " item" + (plural ? "s" : "") + " left"
+      );
+    },
+    ...mapGetters({
+      activeItemsLeftCount: "todos/activeItemsLeftCount"
+    })
   }
 };
 </script>

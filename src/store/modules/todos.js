@@ -39,4 +39,9 @@ export default {
       });
     },
   },
+  getters: {
+    activeItemsLeftCount(state) {
+      return state.data.filter(o => o.checked === false).length
+    }
+  }
 };
