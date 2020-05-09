@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>todos</h1>
+    <h1><img src="../assets/logo.png" class="logo" />-todos</h1>
 
     <TodoInput />
     <TodoList />
@@ -42,5 +42,9 @@ h1 {
   color: rgba(133, 44, 44, 0.2);
   margin: 0;
   padding: 0;
+}
+
+h1 > .logo {
+  width: 50px;
 }
 </style>
