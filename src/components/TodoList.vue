@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   methods: {
@@ -34,9 +34,11 @@ export default {
       toggleTodo: "todos/toggleTodo"
     })
   },
-  computed: mapState({
-    todos: ({ todos }) => todos.data
-  })
+  computed: {
+    ...mapGetters({
+      todos: "todos/filteredData"
+    }),
+  }
 };
 </script>
 

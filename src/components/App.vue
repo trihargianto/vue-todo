@@ -20,13 +20,6 @@ export default {
     TodoList,
     Footer
   },
-  // computed: {
-  //   filteredTodos() {
-  //     return this.todos.filter(function(item) {
-  //       return item.checked === this.selectedFilter;
-  //     });
-  //   },
-  // }
 };
 </script>
 

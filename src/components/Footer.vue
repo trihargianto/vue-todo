@@ -6,29 +6,28 @@
         v-for="(item, index) in filterList"
         :key="index"
         :class="tagClass(item)"
-        @click="selectFilter(item)"
+        @click="changeSelectedFilter(item)"
       >{{ item }}</button>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations, mapState } from "vuex";
 
 export default {
   data() {
     return {
       filterList: ["all", "active", "completed"],
-      selectedFilter: "all"
     };
   },
   methods: {
     tagClass(filterItem) {
       return this.selectedFilter === filterItem ? "tag tag--selected" : "tag";
     },
-    selectFilter(filterItem) {
-      this.selectedFilter = filterItem;
-    }
+    ...mapMutations({
+      changeSelectedFilter: 'todos/changeSelectedFilter'
+    })
   },
   computed: {
     itemsLeftText() {
@@ -40,6 +39,9 @@ export default {
     },
     ...mapGetters({
       activeItemsLeftCount: "todos/activeItemsLeftCount"
+    }),
+    ...mapState({
+      selectedFilter: ({ todos }) => todos.selectedFilter
     })
   }
 };
