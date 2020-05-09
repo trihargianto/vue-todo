@@ -1,5 +1,5 @@
 const state = {
-  data: [{ checked: false, text: 'test' }],
+  data: [],
   selectedFilter: 'all',
   checkAllStatus: false,
 };
