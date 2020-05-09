@@ -14,8 +14,7 @@ yarn serve
 - [x] ~~CRUD Todos with all data stored in the root component~~
 - [x] ~~Toggle button to update particular todo either completed or active~~
 - [x] ~~Toggle button to update all todos either completed or active~~
-- [ ] Show active/completed todos counter
-- [ ] Put todos state in vuex
-- [ ] Create login feature using Firebase Auth
-- [ ] Store todos in Firebase Firestore
-- [ ] Deploy app using Netlify
+- [x] ~~Show active/completed todos counter~~
+- [x] ~~Put todos state in vuex~~
+- [ ] Make todos persistent whenever user reload the page or close the app
+- [x] ~~Deploy app using Netlify~~
